@@ -1,0 +1,44 @@
+#container {
+  width: 600px;
+  height: 400px;
+  background-color: #FFFAFA;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#form-file .input-block {
+  margin: 15px;
+}
+
+#form-file .input-block label {
+  color: #4F4F4F;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#form-file .input-block input[type=file] {
+  font-size: 16px;
+}
+
+#form-file .input-block button{
+  height: 40px;
+  width: 100%;
+  border-radius: 15px;
+  background-color: #1E90FF;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#form-file .input-block button:hover{
+  background-color: #87CEFA;
+}
+
+#form-file .input-block span {
+  font-size: 20px;
+  color: #FFF;
+  font-weight: bold;
+}
