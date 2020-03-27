@@ -4,19 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Upload de arquivos - Tofix Tech</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
+    crossorigin="anonymous"
+  >
   <link rel="stylesheet" href="styles-up.css">
   <link rel="stylesheet" href="global.css">
 </head>
 <body>
   <div id="container">
     <div id="form-file">
-      <form id="formUp" enctype="multipart/form-data" method="POST" action="upload-file.php">
+      <form id="formUp" enctype="multipart/form-data" method="POST">
         <div class="input-block">
           <label for="file">Arquivo</label>
-          <input type="file" name="file" id="file">
+          <input type="file" name="userfile" id="file">
         </div>
         <div class="input-block">
-          <button type="submit"><span>Enviar</span></button>
+          <button type="submit" id="btnSub">
+            <span id="spnSend">Enviar</span>
+          </button>
         </div>
       </form>
     </div>

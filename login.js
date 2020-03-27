@@ -1,16 +1,23 @@
 $("#frm-login").submit(function (e) { 
   e.preventDefault();
   
-  let form = $("#frm-login").serialize();
-  let url = window.location.href;
+  let login = $('#login').val();
+  let passwd = $('#passwd').val();
+  let url = window.location.href;  
 
-  $.post("login.php",form,function (response) {
-      if (response == "1") {
-        window.location.replace(url+"upload-page.php");
+  $.ajax({
+    type: "POST",
+    data: {login,passwd},
+    url: "login.php",
+    success: function (response) {
+      if(response == 1) {
+        window.location.replace("upload-page.php");
       } else {
-        alert("Acesso negado!");
+        alert('Acesso negado');
       }
     },
-    "text"
-  );
+    error: function () { 
+      alert('Erro ao logar no sistema');
+     }
+  });
 });

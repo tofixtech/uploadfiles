@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt_BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,11 @@
       <form id="frm-login">
         <div class="input-block">
           <label for="login" >Login</label>
-          <input type="text" name="login" required autofocus>
+          <input type="text" name="login" id="login" required autofocus>
         </div>
         <div class="input-block">
           <label for="senha" >Senha</label>
-          <input type="password" name="passwd" required>
+          <input type="password" name="passwd" id="passwd" required>
         </div>
         <div class="input-block">
           <button type="submit" id="sub-log"><span>Logar</span></button>

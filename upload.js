@@ -1,18 +1,35 @@
-$("#formUp").submit(function (e) { 
+$("#formUp").submit(async function (e) { 
   e.preventDefault();
 
-  let form = $("#formUp").serialize();
+  $('#spnSend').html('<i class="fas fa-sync fa-spin"></i>Enviando...');
 
-  $.post("upload-file.php", form, function (response) {
-      const [answer,msg] = response.split(':');
+  $('#btnSub').prop('enabled',false);
 
-      if (answer == 1) {
-        alert(msg);
-        $("#formUp").trigger('reset');
-      } else {
-        alert(msg);
+  let form = $("#formUp")[0];
+  
+  let data = new FormData(form);
+
+  await
+  $.ajax({
+		type: "POST",
+		enctype: 'multipart/form-data',
+		url: 'upload-file.php',
+		data: data,
+		processData: false,
+		contentType: false,
+		cache: false,
+		success: function (e){
+      const [code,msg] = e.split(':');
+      alert(msg);
+      if(code == 1) {
+        $('#formUp').trigger('reset');
       }
-    },
-    "text"
-  );
+		},
+		error: function(e) {
+      alert('Erro ao tentar enviar o arquivo!');
+		}
+  });
+  
+  $('#spnSend').html('Enviar');
+  $('#btnSub').prop('enabled',true);
 });
